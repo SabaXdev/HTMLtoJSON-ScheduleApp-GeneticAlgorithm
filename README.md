@@ -64,9 +64,13 @@ Open `index.html` in your web browser to view the form and enter scheduling data
 
 ### Screenshots
 
-![HTML form before user enters any data](Images/blackForm.png)
+HTML form before user enters any data
+![HTML form before user enters any data](Images/blankForm.png)
+Form filled in
 ![Form filled in](Images/filledInForm.png)
+Message pops up after JSON file successfully generated
 ![Message pops up after JSON file successfully generated](Images/formSuccess.png)
+Generated JSON file
 ![Generated JSON file](Images/jsonFile.png)
 
 Let me know if you need any adjustments!
