@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Schedule Generator</title>
+</head>
+<body>
+    <h1>Create Class Schedule</h1>
+    <form id="scheduleForm">
+        <!-- Professor Section -->
+        <h2>Professor</h2>
+        <label for="professorId">Professor ID:</label>
+        <input type="number" id="professorId" required><br>
+        <label for="professorName">Professor Name:</label>
+        <input type="text" id="professorName" required><br>
+
+        <!-- Course Section -->
+        <h2>Course</h2>
+        <label for="courseId">Course ID:</label>
+        <input type="number" id="courseId" required><br>
+        <label for="courseName">Course Name:</label>
+        <input type="text" id="courseName" required><br>
+
+        <!-- Room Section -->
+        <h2>Room</h2>
+        <label for="roomId">Room ID:</label>
+        <input type="number" id="roomId" required><br>
+        <label for="roomName">Room Name:</label>
+        <input type="text" id="roomName" name="roomName" required><br>
+        <label for="roomSize">Room Size (number of seats):</label>
+        <input type="number" id="roomSize" name="roomSize" required><br>
+        <label for="roomLab">Is a Lab (has computers):</label>
+        <input type="checkbox" id="roomLab" name="roomLab"><br>
+
+        <!-- Group Section -->
+        <h2>Student Group</h2>
+        <label for="groupId">Group ID:</label>
+        <input type="number" id="groupId" name="groupId" required><br>
+        <label for="groupName">Group Name:</label>
+        <input type="text" id="groupName" name="groupName" required><br>
+        <label for="groupSize">Group Size (number of students):</label>
+        <input type="number" id="groupSize" name="groupSize" required><br>
+
+        <!-- Class Section -->
+        <h2>Class</h2>
+        <label for="classId">Class ID:</label>
+        <input type="number" id="classId" required><br>
+        <label for="classProfessorId">Professor ID:</label>
+        <input type="number" id="classProfessorId" name="classProfessorId" required><br>
+        <label for="classCourseId">Course ID:</label>
+        <input type="number" id="classCourseId" name="classCourseId" required><br>
+        <label for="classGroupId">Group ID (for students attending this class):</label>
+        <input type="number" id="classGroupId" name="classGroupId" required><br>
+        <label for="classDuration">Class Duration (hours):</label>
+        <input type="number" id="classDuration" name="classDuration" value="1"><br>
+        <label for="classLab">Requires Lab (computers needed):</label>
+        <input type="checkbox" id="classLab" name="classLab"><br>
+
+        <button type="submit">Generate Schedule</button>
+    </form>
+
+    <!-- Link to Javascript File -->
+     <script src="script.js"></script>
+</body>
+</html>
