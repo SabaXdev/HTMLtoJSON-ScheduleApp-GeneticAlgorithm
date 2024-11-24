@@ -1,0 +1,72 @@
+[
+	{
+		"prof": {
+			"id": 1,
+			"name": "Victor"
+		}
+	},
+	{
+		"course": {
+			"id": 1,
+			"name": "Introduction to Programming"
+		}
+	},
+	{
+		"room": {
+			"name": "R3",
+			"lab": true,
+			"size": 24
+		}
+	},
+	{
+		"room": {
+			"name": "R7",
+			"lab": false,
+			"size": 60
+		}
+	},
+	{
+		"group": {
+			"id": 1,
+			"name": "1O1",
+			"size": 19
+		}
+	},
+	{
+		"group": {
+			"id": 2,
+			"name": "1O2",
+			"size": 19
+		}
+	},
+	{
+		"group": {
+			"id": 3,
+			"name": "1O3",
+			"size": 23
+		}
+	},
+	{
+		"group": {
+			"id": 4,
+			"name": "1O4",
+			"size": 19
+		}
+	},
+	{
+		"class": {
+			"professor": 1,
+			"course": 1,
+			"duration": 2,
+			"groups": [ 1, 2 ]
+		}
+	},
+	{
+		"class": {
+			"professor": 1,
+			"course": 1,
+			"duration": 2,
+			"groups": [ 3, 4 ]
+		}
+	}
+]

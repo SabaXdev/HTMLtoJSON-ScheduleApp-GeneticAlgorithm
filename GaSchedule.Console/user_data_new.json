@@ -1,0 +1,78 @@
+[
+  {
+    "prof": {
+      "id": 1,
+      "name": "saba"
+    }
+  },
+  {
+    "prof": {
+      "id": 2,
+      "name": "cotne"
+    }
+  },
+  {
+    "course": {
+      "id": 1,
+      "name": "fop"
+    }
+  },
+  {
+    "course": {
+      "id": 2,
+      "name": "np"
+    }
+  },
+  {
+    "room": {
+      "name": "K-CH",
+      "size": 100
+    }
+  },
+  {
+    "room": {
+      "name": "K-201",
+      "size": 20
+    }
+  },
+  {
+    "room": {
+      "name": "K-320",
+      "size": 40
+    }
+  },
+  {
+    "group": {
+      "id": 1,
+      "name": "team1",
+      "size": 20
+    }
+  },
+  {
+    "group": {
+      "id": 2,
+      "name": "team2",
+      "size": 30
+    }
+  },
+  {
+    "class": {
+      "professor": 1,
+      "course": 1,
+      "groups": [
+        1
+      ],
+      "duration": 3
+    }
+  },
+  {
+    "class": {
+      "professor": 2,
+      "course": 2,
+      "groups": [
+        2
+      ],
+      "duration": 3
+    }
+  }
+]

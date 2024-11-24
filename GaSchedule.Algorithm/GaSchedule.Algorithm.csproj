@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <PackageProjectUrl></PackageProjectUrl>
+    <Copyright>Miller Cy Chan</Copyright>
+    <AssemblyVersion></AssemblyVersion>
+    <FileVersion></FileVersion>
+    <RepositoryUrl>https://github.com/mcychan/GASchedule.cs</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GaSchedule.Model\GaSchedule.Model.csproj" />
+  </ItemGroup>
+
+</Project>

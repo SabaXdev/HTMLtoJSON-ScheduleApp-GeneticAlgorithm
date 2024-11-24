@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const app = express();
-const { exec } = require('child_process')
+const { exec, spawn } = require('child_process')
 const PORT = 3000;
 
 app.use(cors());
@@ -24,6 +24,7 @@ app.post('/save-data', (req, res) => {
         }
     });
 
+    
     // Change directory to GaSchedule.Console and run dotnet build and dotnet run
     exec(`cd GaSchedule.Console && dotnet build && dotnet run`, (error, stdout, stderr) => {
         if (error) {

@@ -1,0 +1,62 @@
+[
+  {
+    "prof": {
+      "id": 1,
+      "name": "Giorgi Nadareishvili"
+    }
+  },
+  {
+    "course": {
+      "id": 1,
+      "name": "A&DS"
+    }
+  },
+  {
+    "room": {
+      "name": "K-CH",
+      "size": 100,
+      "lab": false
+    }
+  },
+  {
+    "room": {
+      "name": "K-305",
+      "size": 30,
+      "lab": false
+    }
+  },
+  {
+    "group": {
+      "id": 1,
+      "name": "990",
+      "size": 10
+    }
+  },
+  {
+    "group": {
+      "id": 2,
+      "name": "991",
+      "size": 35
+    }
+  },
+  {
+    "class": {
+      "professor": 1,
+      "course": 1,
+      "groups": [
+        1
+      ],
+      "duration": 2
+    }
+  },  
+  {
+    "class": {
+      "professor": 1,
+      "course": 1,
+      "groups": [
+        2
+      ],
+      "duration": 2
+    }
+  }
+]
