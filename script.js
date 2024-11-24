@@ -228,11 +228,6 @@ function addClass() {
 
     const classIds = Array.from(document.querySelectorAll('#classTable tbody .classProfessorId')).map(el => el.textContent.trim());
 
-    if (classIds.includes(profId)) {
-        alert("Professor ID must be unique in classes!");
-        return;
-    }
-
     if (!profId || !courseId || !groupId || !duration) {
         alert("Please fill in all fields for the class!");
         return;
