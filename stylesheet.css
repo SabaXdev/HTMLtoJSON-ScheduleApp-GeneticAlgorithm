@@ -181,3 +181,23 @@ table tbody tr:hover {
     background-color: #ccc;
     cursor: not-allowed;
 }
+
+.action-buttons {
+    display: flex;
+    gap: 4px; 
+    justify-content: flex-end;
+}
+
+.action-buttons button {
+    font-size: 20px;
+    padding: 2px 4px;
+    border: none;
+    border-radius: 3px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-buttons button:hover {
+    background-color: #ddd;
+}

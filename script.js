@@ -64,28 +64,37 @@ document.getElementById('scheduleForm').addEventListener('submit', function(even
     });
 });
 
-// Functions to create objects
+function createActionButtons() {
+    return `
+        <td>
+            <div class="action-buttons">
+                <button class="edit-btn" onclick="editRow(this)">✏️</button>
+                <button class="delete-btn" onclick="deleteRow(this)">🗑️</button>
+            </div>
+        </td>
+    `;
+}
+
+function createActionButtons() {
+    return `
+        <td>
+            <div class="action-buttons">
+                <button class="edit-btn" onclick="editRow(this)">✏️</button>
+                <button class="delete-btn" onclick="deleteRow(this)">🗑️</button>
+            </div>
+        </td>
+    `;
+}
+
 function addProfessor() {
     const id = document.getElementById('professorId').value.trim();
     const name = document.getElementById('professorName').value.trim();
 
     if (id && name) {
         const professorIds = Array.from(document.querySelectorAll('#professorsTable tbody .professorId')).map(el => el.textContent.trim());
-        
+
         if (professorIds.includes(id)) {
             alert("Professor ID must be unique!");
-            return;
-        }
-
-        // Check if ID and Name are provided
-        if (!id || !name) {
-            alert("Please fill in both ID and Name!");
-            return;
-        }
-
-        // Check if ID is a valid number
-        if (isNaN(id) || id <= 0) {
-            alert("Professor ID must be a positive number!");
             return;
         }
 
@@ -94,11 +103,11 @@ function addProfessor() {
             <tr class="professor">
                 <td class="professorId">${id}</td>
                 <td class="professorName">${name}</td>
+                ${createActionButtons()}
             </tr>
         `;
         tableBody.insertAdjacentHTML('beforeend', newRow);
 
-        // Reset input fields
         document.getElementById('professorId').value = '';
         document.getElementById('professorName').value = '';
     } else {
@@ -109,11 +118,6 @@ function addProfessor() {
 function addCourse() {
     const id = document.getElementById('courseId').value.trim();
     const name = document.getElementById('courseName').value.trim();
-
-    if (isNaN(id) || id <= 0) {
-        alert("Course ID must be a positive number!");
-        return;
-    }
 
     if (id && name) {
         const courseIds = Array.from(document.querySelectorAll('#courseTable tbody .courseId')).map(el => el.textContent.trim());
@@ -128,11 +132,11 @@ function addCourse() {
             <tr class="course">
                 <td class="courseId">${id}</td>
                 <td class="courseName">${name}</td>
+                ${createActionButtons()}
             </tr>
         `;
         tableBody.insertAdjacentHTML('beforeend', newRow);
 
-        // Reset input fields
         document.getElementById('courseId').value = '';
         document.getElementById('courseName').value = '';
     } else {
@@ -145,53 +149,37 @@ function addRoom() {
     const lab = document.getElementById('roomLab').checked;
     const size = document.getElementById('roomSize').value.trim();
 
-    const roomNames = Array.from(document.querySelectorAll('#roomTable tbody .roomName')).map(el => el.textContent.trim());
+    if (name && size) {
+        const roomNames = Array.from(document.querySelectorAll('#roomTable tbody .roomName')).map(el => el.textContent.trim());
 
-    if (roomNames.includes(name)) {
-        alert("Room name must be unique!");
-        return;
-    }
+        if (roomNames.includes(name)) {
+            alert("Room name must be unique!");
+            return;
+        }
 
-    if (!name || !size) {
+        const tableBody = document.querySelector('#roomTable tbody');
+        const newRow = `
+            <tr class="room">
+                <td class="roomName">${name}</td>
+                <td class="roomLab">${lab}</td>
+                <td class="roomSize">${size}</td>
+                ${createActionButtons()}
+            </tr>
+        `;
+        tableBody.insertAdjacentHTML('beforeend', newRow);
+
+        document.getElementById('roomName').value = '';
+        document.getElementById('roomLab').checked = false;
+        document.getElementById('roomSize').value = '';
+    } else {
         alert("Please fill in both Room Name and Room Size!");
-        return;
     }
-
-    if (isNaN(size) || size <= 0) {
-        alert("Room size must be a positive number!");
-        return;
-    }
-
-    const tableBody = document.querySelector('#roomTable tbody');
-    const newRow = `
-        <tr class="room">
-            <td class="roomName">${name}</td>
-            <td class="roomLab">${lab}</td>
-            <td class="roomSize">${size}</td>
-        </tr>
-    `;
-    tableBody.insertAdjacentHTML('beforeend', newRow);
-
-    document.getElementById('roomName').value = '';
-    document.getElementById('roomLab').checked = false;
-    document.getElementById('roomSize').value = '';
-
 }
 
 function addGroup() {
     const id = document.getElementById('groupId').value.trim();
     const name = document.getElementById('groupName').value.trim();
     const size = document.getElementById('groupSize').value.trim();
-
-    if (isNaN(id) || id <= 0) {
-        alert("Group ID must be a positive number!");
-        return;
-    }
-
-    if (isNaN(size) || size <= 0) {
-        alert("Group size must be a positive number!");
-        return;
-    }
 
     if (id && name && size) {
         const groupIds = Array.from(document.querySelectorAll('#groupTable tbody .groupId')).map(el => el.textContent.trim());
@@ -207,6 +195,7 @@ function addGroup() {
                 <td class="groupId">${id}</td>
                 <td class="groupName">${name}</td>
                 <td class="groupSize">${size}</td>
+                ${createActionButtons()}
             </tr>
         `;
         tableBody.insertAdjacentHTML('beforeend', newRow);
@@ -215,7 +204,7 @@ function addGroup() {
         document.getElementById('groupName').value = '';
         document.getElementById('groupSize').value = '';
     } else {
-        alert("Please fill in ID, Name and Size!");
+        alert("Please fill in ID, Name, and Size!");
     }
 }
 
@@ -226,49 +215,63 @@ function addClass() {
     const duration = document.getElementById('classDuration').value.trim();
     const lab = document.getElementById('classLab').checked;
 
-    const classIds = Array.from(document.querySelectorAll('#classTable tbody .classProfessorId')).map(el => el.textContent.trim());
+    if (profId && courseId && groupId && duration) {
+        const tableBody = document.querySelector('#classTable tbody');
+        const newRow = `
+            <tr class="class">
+                <td class="classProfessorId">${profId}</td>
+                <td class="classCourseId">${courseId}</td>
+                <td class="classGroupId">${groupId}</td>
+                <td class="classDuration">${duration}</td>
+                <td class="classLab">${lab}</td>
+                ${createActionButtons()}
+            </tr>
+        `;
+        tableBody.insertAdjacentHTML('beforeend', newRow);
 
-    if (!profId || !courseId || !groupId || !duration) {
+        document.getElementById('classProfessorId').value = '';
+        document.getElementById('classCourseId').value = '';
+        document.getElementById('classGroupId').value = '';
+        document.getElementById('classDuration').value = '';
+        document.getElementById('classLab').checked = false;
+    } else {
         alert("Please fill in all fields for the class!");
-        return;
+    }
+}
+
+function editRow(button) {
+    const row = button.closest('tr'); // Get the row containing the button
+    const formId = row.closest('table').id; // Get the table's ID to determine the section
+
+    // Transfer data back to the appropriate form
+    if (formId === 'professorsTable') {
+        document.getElementById('professorId').value = row.querySelector('.professorId').textContent.trim();
+        document.getElementById('professorName').value = row.querySelector('.professorName').textContent.trim();
+    } else if (formId === 'courseTable') {
+        document.getElementById('courseId').value = row.querySelector('.courseId').textContent.trim();
+        document.getElementById('courseName').value = row.querySelector('.courseName').textContent.trim();
+    } else if (formId === 'roomTable') {
+        document.getElementById('roomName').value = row.querySelector('.roomName').textContent.trim();
+        document.getElementById('roomSize').value = row.querySelector('.roomSize').textContent.trim();
+        document.getElementById('roomLab').checked = row.querySelector('.roomLab').textContent.trim() === 'true';
+    } else if (formId === 'groupTable') {
+        document.getElementById('groupId').value = row.querySelector('.groupId').textContent.trim();
+        document.getElementById('groupName').value = row.querySelector('.groupName').textContent.trim();
+        document.getElementById('groupSize').value = row.querySelector('.groupSize').textContent.trim();
+    } else if (formId === 'classTable') {
+        document.getElementById('classProfessorId').value = row.querySelector('.classProfessorId').textContent.trim();
+        document.getElementById('classCourseId').value = row.querySelector('.classCourseId').textContent.trim();
+        document.getElementById('classGroupId').value = row.querySelector('.classGroupId').textContent.trim();
+        document.getElementById('classDuration').value = row.querySelector('.classDuration').textContent.trim();
+        document.getElementById('classLab').checked = row.querySelector('.classLab').textContent.trim() === 'true';
     }
 
-    if (isNaN(profId) || profId <= 0) {
-        alert("Professor ID must be a positive number!");
-        return;
-    }
+    // Remove the row from the table
+    row.remove();
+}
 
-    if (isNaN(courseId) || courseId <= 0) {
-        alert("Course ID must be a positive number!");
-        return;
-    }
-
-    if (isNaN(groupId) || groupId <= 0) {
-        alert("Group ID must be a positive number!");
-        return;
-    }
-
-    if (isNaN(duration) || duration <= 0) {
-        alert("Duration must be a positive number!");
-        return;
-    }
-
-    const tableBody = document.querySelector('#classTable tbody');
-    const newRow = `
-        <tr class="class">
-            <td class="classProfessorId">${profId}</td>
-            <td class="classCourseId">${courseId}</td>
-            <td class="classGroupId">${groupId}</td>
-            <td class="classDuration">${duration}</td>
-            <td class="classLab">${lab}</td>
-        </tr>
-    `;
-    tableBody.insertAdjacentHTML('beforeend', newRow);
-
-    document.getElementById('classProfessorId').value = '';
-    document.getElementById('classCourseId').value = '';
-    document.getElementById('classGroupId').value = '';
-    document.getElementById('classDuration').value = '';
-    document.getElementById('classLab').checked = false;
-
+function deleteRow(button) {
+    // Get the row containing the button and remove it
+    const row = button.closest('tr');
+    row.remove();
 }
