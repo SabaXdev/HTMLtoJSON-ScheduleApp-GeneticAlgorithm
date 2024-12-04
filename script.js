@@ -1,7 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
     lucide.createIcons();
+
+    // Restore data from localStorage on page load
+    const savedData = JSON.parse(localStorage.getItem("scheduleFormData")) || {};    
+    if (savedData && Object.keys(savedData).length > 0) {
+        const restoreButton = document.getElementById("restoreButton");
+        if (restoreButton) {
+            restoreButton.addEventListener("click", () => {
+                restoreFormData(savedData);
+            });
+        }
+    }
 });
 
+// Prevent page reload and save data to localStorage
 document.getElementById('scheduleForm').noValidate = true;
 
 document.getElementById('scheduleForm').addEventListener('submit', function(event) {
@@ -20,9 +32,9 @@ document.getElementById('scheduleForm').addEventListener('submit', function(even
 
     const rooms = Array.from(document.querySelectorAll('#roomTable tbody .room')).map(room => ({
         name: room.querySelector('.roomName').textContent.trim(),
-        lab: room.querySelector('.roomLab').checked,
-        size: parseInt(room.querySelector('.roomSize').textContent.trim())
-    }));  
+        lab: room.querySelector('.roomLab' ).textContent.trim() === 'true',     //Convert text to boolean
+        size: parseInt(room.querySelector('.roomSize').textContent.trim()) 
+    }));
 
     const groups = Array.from(document.querySelectorAll('#groupTable tbody .group')).map(group => ({
         id: parseInt(group.querySelector('.groupId').textContent.trim()),
@@ -35,7 +47,7 @@ document.getElementById('scheduleForm').addEventListener('submit', function(even
         course: parseInt(cls.querySelector('.classCourseId').textContent.trim()),
         groups: [parseInt(cls.querySelector('.classGroupId').textContent.trim())],
         duration: parseInt(cls.querySelector('.classDuration').textContent.trim()),
-        lab: cls.querySelector('.classLab').checked
+        lab: cls.querySelector('.classLab').textContent.trim() === 'true',     //Convert text to boolean
     }));
     
     const scheduleData = [
@@ -46,6 +58,10 @@ document.getElementById('scheduleForm').addEventListener('submit', function(even
         ...classes.map(cls => ({ class: cls }))
     ];
 
+    // Save data to localStorage
+    localStorage.setItem("scheduleFormData", JSON.stringify(scheduleData));
+
+    // Send data to server
     fetch('http://localhost:3000/save-data', {
         method: 'POST',
         headers: {
@@ -53,16 +69,164 @@ document.getElementById('scheduleForm').addEventListener('submit', function(even
         },
         body: JSON.stringify(scheduleData)
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            console.error(`Response failed: ${response.status} ${response.statusText}`);
+            throw new Error(`HTTP status ${response.status}: ${response.statusText}`);
+        }
+        return response.json();
+    })
     .then(data => {
         console.log("Success:", data);
         alert("Data saved to JSON file successfully!");
     })
     .catch(error => {
-        console.error('Error:', error);
-        alert("An error occurred.");
+        console.error('Error occurred:', error.message);
+        alert(`An error occurred: ${error.message}`);
     });
+    
+
 });
+
+// Function to restore form data from localStorage
+function restoreFormData(data) {
+    const tableBodyMap = {
+        professors: '#professorsTable tbody',
+        courses: '#courseTable tbody',
+        rooms: '#roomTable tbody',
+        groups: '#groupTable tbody',
+        classes: '#classTable tbody',
+    };
+
+    // Check if data is an array
+    if (Array.isArray(data)) {
+        data.forEach(entryObj => {
+
+            // Check for specific properties (e.g., 'prof', 'course', etc.)
+            if (entryObj.prof) {
+                const tableBody = document.querySelector(tableBodyMap['professors']);
+                const entry = entryObj.prof; // Extract the professor data
+            
+                // Get all existing professor IDs
+                const existingProfessorIds = Array.from(
+                    document.querySelectorAll('#professorsTable tbody .professorId')
+                ).map(el => el.textContent.trim());
+            
+                // Check if the professor ID already exists
+                if (!existingProfessorIds.includes(entry.id.toString())) {
+                    let newRow = `
+                        <tr class="professor">
+                            <td class="professorId">${entry.id}</td>
+                            <td class="professorName">${entry.name}</td>
+                            ${createActionButtons()}
+                        </tr>
+                    `;
+                    tableBody.insertAdjacentHTML('beforeend', newRow);
+                } else {
+                    console.log(`Professor with ID ${entry.id} already exists.`);
+                }
+            } else if (entryObj.course) {
+                const tableBody = document.querySelector(tableBodyMap['courses']);
+                const entry = entryObj.course; // Extract the course data
+            
+                // Get all existing course IDs
+                const existingCourseIds = Array.from(
+                    document.querySelectorAll('#courseTable tbody .courseId')
+                ).map(el => el.textContent.trim());
+            
+                // Check if the course ID already exists
+                if (!existingCourseIds.includes(entry.id.toString())) {
+                    let newRow = `
+                        <tr class="course">
+                            <td class="courseId">${entry.id}</td>
+                            <td class="courseName">${entry.name}</td>
+                            ${createActionButtons()}
+                        </tr>
+                    `;
+                    tableBody.insertAdjacentHTML('beforeend', newRow);
+                } else {
+                    console.log(`Course with ID ${entry.id} already exists.`);
+                }
+            } else if (entryObj.room) {
+                const tableBody = document.querySelector(tableBodyMap['rooms']);
+                const entry = entryObj.room; // Extract the room data
+            
+                // Get all existing room names
+                const existingRoomNames = Array.from(
+                    document.querySelectorAll('#roomTable tbody .roomName')
+                ).map(el => el.textContent.trim());
+            
+                // Check if the room name already exists
+                if (!existingRoomNames.includes(entry.name.trim())) {
+                    let newRow = `
+                        <tr class="room">
+                            <td class="roomName">${entry.name}</td>
+                            <td class="roomLab">${entry.lab}</td>
+                            <td class="roomSize">${entry.size}</td>
+                            ${createActionButtons()}
+                        </tr>
+                    `;
+                    tableBody.insertAdjacentHTML('beforeend', newRow);
+                } else {
+                    console.log(`Room with name "${entry.name}" already exists.`);
+                }
+                        
+            } else if (entryObj.group) {
+                const tableBody = document.querySelector(tableBodyMap['groups']);
+                const entry = entryObj.group; // Extract the group data
+            
+                // Get all existing group IDs
+                const existingGroupIds = Array.from(
+                    document.querySelectorAll('#groupTable tbody .groupId')
+                ).map(el => el.textContent.trim());
+            
+                // Check if the group ID already exists
+                if (!existingGroupIds.includes(entry.id.toString())) {
+                    let newRow = `
+                        <tr class="group">
+                            <td class="groupId">${entry.id}</td>
+                            <td class="groupName">${entry.name}</td>
+                            <td class="groupSize">${entry.size}</td>
+                            ${createActionButtons()}
+                        </tr>
+                    `;
+                    tableBody.insertAdjacentHTML('beforeend', newRow);
+                } else {
+                    console.log(`Group with ID "${entry.id}" already exists.`);
+                }
+            } else if (entryObj.class) {
+                const tableBody = document.querySelector(tableBodyMap['classes']);
+                const entry = entryObj.class; // Extract the class data
+                
+                // Get all existing class identifiers (in this case, combination of professor, course, and group)
+                const existingClassIds = Array.from(
+                    document.querySelectorAll('#classTable tbody .classProfessorId, .classCourseId, .classGroupId')
+                ).map(el => `${el.closest('tr').querySelector('.classProfessorId').textContent.trim()}-${el.closest('tr').querySelector('.classCourseId').textContent.trim()}-${el.closest('tr').querySelector('.classGroupId').textContent.trim()}`);
+                
+                // Create a unique ID for the class based on professor, course, and groups (you can modify this logic to fit your needs)
+                const newClassId = `${entry.professor.toString()}-${entry.course.toString()}-${entry.groups.join(', ').toString()}`;
+            
+                // Check if this combination of professor, course, and groups already exists
+                if (!existingClassIds.includes(newClassId)) {
+                    let newRow = `
+                        <tr class="class">
+                            <td class="classProfessorId">${entry.professor}</td>
+                            <td class="classCourseId">${entry.course}</td>
+                            <td class="classGroupId">${entry.groups.join(', ')}</td>
+                            <td class="classDuration">${entry.duration}</td>
+                            <td class="classLab">${entry.lab}</td>
+                            ${createActionButtons()}
+                        </tr>
+                    `;
+                    tableBody.insertAdjacentHTML('beforeend', newRow);
+                } else {
+                    console.log(`Class with professor "${entry.professor}", course "${entry.course}", and groups "${entry.groups.join(', ')}" already exists.`);
+                }
+            }
+        });
+    }
+}
+
 
 function createActionButtons() {
     return `
@@ -144,6 +308,7 @@ function addCourse() {
     }
 }
 
+// Add tr room in table
 function addRoom() {
     const name = document.getElementById('roomName').value.trim();
     const lab = document.getElementById('roomLab').checked;
@@ -215,6 +380,26 @@ function addClass() {
     const duration = document.getElementById('classDuration').value.trim();
     const lab = document.getElementById('classLab').checked;
 
+    const ids = {
+        professorIds: Array.from(document.querySelectorAll('#professorsTable tbody .professorId')).map(el => el.textContent.trim()),
+        courseIds: Array.from(document.querySelectorAll('#courseTable tbody .courseId')).map(el => el.textContent.trim()),
+        groupIds: Array.from(document.querySelectorAll('#groupTable tbody .groupId')).map(el => el.textContent.trim()),
+    };
+    
+    // Validate the IDs
+    if (!ids.professorIds.includes(profId)) {
+        alert("Invalid Professor ID!");
+        return;
+    }
+    if (!ids.courseIds.includes(courseId)) {
+        alert("Invalid Course ID!");
+        return;
+    }
+    if (!ids.groupIds.includes(groupId)) {
+        alert("Invalid Group ID!");
+        return;
+    }
+
     if (profId && courseId && groupId && duration) {
         const tableBody = document.querySelector('#classTable tbody');
         const newRow = `
@@ -265,7 +450,6 @@ function editRow(button) {
         document.getElementById('classDuration').value = row.querySelector('.classDuration').textContent.trim();
         document.getElementById('classLab').checked = row.querySelector('.classLab').textContent.trim() === 'true';
     }
-
     // Remove the row from the table
     row.remove();
 }
