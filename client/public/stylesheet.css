@@ -1,0 +1,203 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7faff;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #121927;
+    margin: 20px 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Equivalent to gap-3 */
+}
+
+.header .icon {
+    width: 2rem; /* Equivalent to w-8 */
+    height: 2rem; /* Equivalent to h-8 */
+    color: #3b82f6; /* Equivalent to text-blue-500 */
+}
+
+.header h1 {
+    font-size: 1.875rem; /* Equivalent to text-3xl */
+    font-weight: 700; /* Equivalent to font-bold */
+    color: #1f2937; /* Equivalent to text-gray-800 */
+}
+
+
+/* Container */
+.container {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1024px; /* Equivalent to max-w-5xl */
+    margin-left: auto;
+    margin-right: auto; /* Equivalent to mx-auto */
+    padding: 1.5rem; /* Equivalent to p-6 */
+    background-color: #f9fafb; /* Equivalent to bg-gray-50 */
+    min-height: 100vh; /* Equivalent to min-h-screen */
+    display: flex;
+    flex-direction: column; /* To allow spacing between child elements */
+    gap: 3rem; /* Equivalent to space-y-6 */
+}
+
+.professorContainer,
+.coursesContainer,
+.roomsContainer,
+.groupsContainer,
+.classesContainer {
+    margin-bottom: 1.5rem;
+    border-top: 4px solid #3b82f6; /* Border top color similar to blue-500 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Section Header */
+.section-header {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e3e6f0;
+    /* padding-bottom: 5px; */
+
+    padding-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section-header svg.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #3b82f6;
+}
+
+
+.section-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.professor-form,
+.course-form,
+.room-form,
+.group-form, 
+.class-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    align-items: center;
+}
+
+/* Form Elements */
+input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #121927;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #1a263c;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Data Tables */
+.data-table {
+    margin-top: 1rem; /* mt-4 equivalent */
+    border: 1px solid #d1d5db; /* Light border color */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;;
+    margin-top: 10px;
+}
+
+table th, table td {
+    /* padding: 10px; */
+    border-bottom: 1px solid #ddd;
+
+    padding: 8px 16px; /* px-4 py-2 */
+    text-align: left;
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500; /* font-medium */
+    color: #4b5563; /* text-gray-600 */
+    background-color: #f9fafb; /* bg-gray-50 */
+}
+
+table th {
+    background-color: #f2f6fc;
+    color: #333;
+}
+
+table tbody tr:hover {
+    background-color: #f2f6fc;
+}
+
+/* Schedule Button */
+#generate-schedule {
+    background-color: #121927;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+#generate-schedule:hover {
+    background-color: #1a263c;
+}
+
+#generate-schedule:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 4px; 
+    justify-content: flex-end;
+}
+
+.action-buttons button {
+    font-size: 20px;
+    padding: 2px 4px;
+    border: none;
+    border-radius: 3px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-buttons button:hover {
+    background-color: #ddd;
+}

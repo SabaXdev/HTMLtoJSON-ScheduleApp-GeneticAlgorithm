@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sabak\\.nuget\\packages\\": {}
+    "/home/demetre/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sabak\\OneDrive\\Documents\\Internship-GeneticAlgorithm\\GaSchedule.Algorithm\\GaSchedule.Algorithm.csproj",
+      "projectUniqueName": "/home/demetre/Desktop/HTMLtoJSON-ScheduleApp-GeneticAlgorithm/GaSchedule.Algorithm/GaSchedule.Algorithm.csproj",
       "projectName": "GaSchedule.Algorithm",
-      "projectPath": "C:\\Users\\sabak\\OneDrive\\Documents\\Internship-GeneticAlgorithm\\GaSchedule.Algorithm\\GaSchedule.Algorithm.csproj",
-      "packagesPath": "C:\\Users\\sabak\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sabak\\OneDrive\\Documents\\Internship-GeneticAlgorithm\\GaSchedule.Algorithm\\obj\\",
+      "projectPath": "/home/demetre/Desktop/HTMLtoJSON-ScheduleApp-GeneticAlgorithm/GaSchedule.Algorithm/GaSchedule.Algorithm.csproj",
+      "packagesPath": "/home/demetre/.nuget/packages/",
+      "outputPath": "/home/demetre/Desktop/HTMLtoJSON-ScheduleApp-GeneticAlgorithm/GaSchedule.Algorithm/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\sabak\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/demetre/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -51,8 +51,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\sabak\\OneDrive\\Documents\\Internship-GeneticAlgorithm\\GaSchedule.Model\\GaSchedule.Model.csproj": {
-              "projectPath": "C:\\Users\\sabak\\OneDrive\\Documents\\Internship-GeneticAlgorithm\\GaSchedule.Model\\GaSchedule.Model.csproj"
+            "/home/demetre/Desktop/HTMLtoJSON-ScheduleApp-GeneticAlgorithm/GaSchedule.Model/GaSchedule.Model.csproj": {
+              "projectPath": "/home/demetre/Desktop/HTMLtoJSON-ScheduleApp-GeneticAlgorithm/GaSchedule.Model/GaSchedule.Model.csproj"
             }
           }
         }
@@ -61,11 +61,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -87,7 +82,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

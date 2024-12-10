@@ -2,57 +2,53 @@
   {
     "prof": {
       "id": 1,
-      "name": "saba"
+      "name": "1"
     }
   },
   {
     "prof": {
       "id": 2,
-      "name": "cotne"
+      "name": "2"
     }
   },
   {
     "course": {
       "id": 1,
-      "name": "fop"
+      "name": "1"
     }
   },
   {
     "course": {
       "id": 2,
-      "name": "np"
+      "name": "2"
     }
   },
   {
     "room": {
-      "name": "K-CH",
-      "size": 100
+      "name": "1",
+      "lab": false,
+      "size": 11
     }
   },
   {
     "room": {
-      "name": "K-201",
-      "size": 20
-    }
-  },
-  {
-    "room": {
-      "name": "K-320",
-      "size": 40
+      "name": "2",
+      "lab": false,
+      "size": 22
     }
   },
   {
     "group": {
       "id": 1,
-      "name": "team1",
-      "size": 20
+      "name": "1",
+      "size": 1
     }
   },
   {
     "group": {
       "id": 2,
-      "name": "team2",
-      "size": 30
+      "name": "2",
+      "size": 2
     }
   },
   {
@@ -62,7 +58,8 @@
       "groups": [
         1
       ],
-      "duration": 3
+      "duration": 1,
+      "lab": false
     }
   },
   {
@@ -72,7 +69,8 @@
       "groups": [
         2
       ],
-      "duration": 3
+      "duration": 2,
+      "lab": false
     }
   }
 ]

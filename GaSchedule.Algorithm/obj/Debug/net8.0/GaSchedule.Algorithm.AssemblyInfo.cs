@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Miller Cy Chan")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce16e255ac17f8f3bcf7b252f87c8730f5df92b0")]
 [assembly: System.Reflection.AssemblyProductAttribute("GaSchedule.Algorithm")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GaSchedule.Algorithm")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

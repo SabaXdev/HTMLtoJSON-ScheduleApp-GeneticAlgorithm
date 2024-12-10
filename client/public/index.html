@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Schedule Generator</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="./script.js"></script>
+</head>
+<body>
+    <form id="scheduleForm" class="container">
+        <div class="header">
+            <svg data-lucide="calendar" class="icon"></svg>
+            <h1>Create Class Schedule</h1>
+        </div>
+        <!-- Professor Section -->
+        <div class="professorContainer">
+            <div class="section-header">
+                <svg data-lucide="users" class="icon"></svg>
+                <h2>Professors</h2>
+            </div>
+            <div class="professor-form">
+                <input type="number" id="professorId" placeholder="Professor ID" required min="1">
+                <input type="text" id="professorName" placeholder="Name" required maxlength="50">
+                <button type="button" class="button" onclick="addProfessor()">Add Professor</button>
+            </div>
+            <div class="data-table">
+                <table id="professorsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody class="professor">
+                        <!-- Professors will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+
+        <!-- Course Section -->
+        <div class="coursesContainer">
+            <div class="section-header">
+                <svg data-lucide="book-open" class="icon"></svg>
+                <h2>Courses</h2> 
+            </div>
+            <div class="course-form">
+                <input type="number" id="courseId" placeholder="Course ID" required min="1">
+                <input type="text" id="courseName" placeholder="Name" required maxlength="50">
+                <button type="button" class="button" onclick="addCourse()">Add Course</button>
+            </div>
+            <div class="data-table">
+                <table id="courseTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody class="course">
+                        <!-- Professors will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <!-- Room Section -->
+        <div class="roomsContainer">
+            <div class="section-header">
+                <svg data-lucide="building" class="icon"></svg>
+                <h2>Rooms</h2> 
+            </div>
+            <div class="room-form">
+                <input type="text" id="roomName" placeholder="Room Name" required>
+                <input type="number" id="roomSize" placeholder="Room Size" required><br>
+                <div style="display: inline-flex; align-items: center;">
+                    <label style="margin-right: 3px; ">Lab:</label>
+                    <input style="margin-top: 0.5rem;" type="checkbox" id="roomLab" placeholder="Lab">
+                </div>
+                <button type="button" class="button" onclick="addRoom()">Add Room</button>
+            </div>
+            <div class="data-table">
+                <table id="roomTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Lab</th>
+                            <th>Size</th>
+                        </tr>
+                    </thead>
+                    <tbody class="room">
+                        <!-- dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Group Section -->
+        <div class="groupsContainer">
+            <div class="section-header">
+                <svg data-lucide="group" class="icon"></svg>
+                <h2>Groups</h2> 
+            </div>
+            <div class="group-form">
+                <input type="number" id="groupId" placeholder="Group ID" required>
+                <input type="text" id="groupName" placeholder="Group Name" required>
+                <input type="number" id="groupSize" placeholder="Group Size" required><br>
+                <button type="button" class="button" onclick="addGroup()">Add Group</button>
+            </div>
+            <div class="data-table">
+                <table id="groupTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Size</th>
+                        </tr>
+                    </thead>
+                    <tbody class="group">
+                        <!-- dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Class Section -->
+        <div class="classesContainer">
+            <div class="section-header">
+                <svg data-lucide="calendar" class="icon"></svg>
+                <h2>Classes</h2> 
+            </div>
+            <div class="class-form">
+                <input type="number" id="classProfessorId" placeholder="Professor ID" required>
+                <input type="number" id="classCourseId" placeholder="Course ID" required>
+                <input type="number" id="classGroupId" placeholder="Group ID" required>
+                <input type="number" id="classDuration" placeholder="Duration" value="1" required><br>
+                <div style="display: inline-flex; align-items: center;">
+                    <label style="margin-right: 3px; ">Lab:</label>
+                    <input style="margin-top: 0.5rem;" type="checkbox" id="classLab" placeholder="Lab">
+                </div>
+
+                <button type="button" class="button" onclick="addClass()">Add Class</button>
+            </div>
+            <div class="data-table">
+                <table id="classTable">
+                    <thead>
+                        <tr>
+                            <th>Professor</th>
+                            <th>Course</th>
+                            <th>Group</th>
+                            <th>Duration</th>
+                            <th>Lab</th>
+                        </tr>
+                    </thead>
+                    <tbody class="class">
+                        <!-- dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <button type="submit" id="generate-schedule">Generate Schedule</button>
+        <button type="button" id="restoreButton">Restore Form Data</button>
+    </form>
+
+    <!-- Link to Javascript File -->
+     <script src="script.js"></script>
+</body>
+</html>
