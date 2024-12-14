@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Miller Cy Chan")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce16e255ac17f8f3bcf7b252f87c8730f5df92b0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da4fdcd3c1486adbb451584822c8ce2c6124a407")]
 [assembly: System.Reflection.AssemblyProductAttribute("GaSchedule.Model")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GaSchedule.Model")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

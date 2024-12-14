@@ -47,6 +47,13 @@ h1 {
     gap: 3rem; /* Equivalent to space-y-6 */
 }
 
+.sectionsContainer {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to the next row */
+    gap: 1.5rem; /* Add spacing between the containers */
+    justify-content: space-between; /* Spread containers evenly across the row */
+}
+
 .professorContainer,
 .coursesContainer,
 .roomsContainer,
@@ -55,7 +62,14 @@ h1 {
     margin-bottom: 1.5rem;
     border-top: 4px solid #3b82f6; /* Border top color similar to blue-500 */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 5px;
+    flex: 1 1 calc(50% - 1.5rem); /* Each container takes 50% of the width minus the gap */
+    max-width: calc(50% - 1.5rem); /* Ensures containers don't exceed half of the row */
+    margin: 0; /* Remove bottom margin (spacing is controlled by gap) */
+}
+
+.classesContainer {
+    margin-left: 250px;;
 }
 
 /* Section Header */

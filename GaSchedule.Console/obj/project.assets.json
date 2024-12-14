@@ -45,19 +45,19 @@
     ]
   },
   "packageFolders": {
-    "/home/demetre/.nuget/packages/": {}
+    "C:\\Users\\sabak\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.2.3",
     "restore": {
-      "projectUniqueName": "/home/demetre/Desktop/HTMLtoJSON-ScheduleApp-GeneticAlgorithm/GaSchedule.Console/GaSchedule.Console.csproj",
+      "projectUniqueName": "C:\\Users\\sabak\\OneDrive\\Documents\\Internship-GeneticAlgorithm\\GeneticAlgorithm-HTMLtoJSON\\GaSchedule.Console\\GaSchedule.Console.csproj",
       "projectName": "GaSchedule",
-      "projectPath": "/home/demetre/Desktop/HTMLtoJSON-ScheduleApp-GeneticAlgorithm/GaSchedule.Console/GaSchedule.Console.csproj",
-      "packagesPath": "/home/demetre/.nuget/packages/",
-      "outputPath": "/home/demetre/Desktop/HTMLtoJSON-ScheduleApp-GeneticAlgorithm/GaSchedule.Console/obj/",
+      "projectPath": "C:\\Users\\sabak\\OneDrive\\Documents\\Internship-GeneticAlgorithm\\GeneticAlgorithm-HTMLtoJSON\\GaSchedule.Console\\GaSchedule.Console.csproj",
+      "packagesPath": "C:\\Users\\sabak\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sabak\\OneDrive\\Documents\\Internship-GeneticAlgorithm\\GeneticAlgorithm-HTMLtoJSON\\GaSchedule.Console\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/demetre/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\sabak\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -69,8 +69,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/demetre/Desktop/HTMLtoJSON-ScheduleApp-GeneticAlgorithm/GaSchedule.Algorithm/GaSchedule.Algorithm.csproj": {
-              "projectPath": "/home/demetre/Desktop/HTMLtoJSON-ScheduleApp-GeneticAlgorithm/GaSchedule.Algorithm/GaSchedule.Algorithm.csproj"
+            "C:\\Users\\sabak\\OneDrive\\Documents\\Internship-GeneticAlgorithm\\GeneticAlgorithm-HTMLtoJSON\\GaSchedule.Algorithm\\GaSchedule.Algorithm.csproj": {
+              "projectPath": "C:\\Users\\sabak\\OneDrive\\Documents\\Internship-GeneticAlgorithm\\GeneticAlgorithm-HTMLtoJSON\\GaSchedule.Algorithm\\GaSchedule.Algorithm.csproj"
             }
           }
         }
@@ -79,6 +79,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -100,7 +105,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

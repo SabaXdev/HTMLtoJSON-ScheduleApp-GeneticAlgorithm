@@ -19,12 +19,18 @@
           "GaSchedule.Model": "1.0.0"
         },
         "runtime": {
-          "GaSchedule.Algorithm.dll": {}
+          "GaSchedule.Algorithm.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "GaSchedule.Model/1.0.0": {
         "runtime": {
-          "GaSchedule.Model.dll": {}
+          "GaSchedule.Model.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

@@ -16,7 +16,10 @@
       },
       "GaSchedule.Model/1.0.0": {
         "runtime": {
-          "GaSchedule.Model.dll": {}
+          "GaSchedule.Model.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

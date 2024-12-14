@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TY9cQI7I4PNajuquHqUdxoKUmULvCsbFhTRIU+RbtTg57+KuTjTdushKMmTrYen4E/XBysTuxeJ2ykMYuuOZqA==",
+  "dgSpecHash": "83bY9HdV870=",
   "success": true,
-  "projectFilePath": "/home/demetre/Desktop/HTMLtoJSON-ScheduleApp-GeneticAlgorithm/GaSchedule.Console/GaSchedule.Console.csproj",
+  "projectFilePath": "C:\\Users\\sabak\\OneDrive\\Documents\\Internship-GeneticAlgorithm\\GeneticAlgorithm-HTMLtoJSON\\GaSchedule.Console\\GaSchedule.Console.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

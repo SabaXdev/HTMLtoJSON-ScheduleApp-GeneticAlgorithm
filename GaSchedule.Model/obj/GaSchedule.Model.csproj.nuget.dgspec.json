@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/demetre/Desktop/HTMLtoJSON-ScheduleApp-GeneticAlgorithm/GaSchedule.Model/GaSchedule.Model.csproj": {}
+    "C:\\Users\\sabak\\OneDrive\\Documents\\Internship-GeneticAlgorithm\\GeneticAlgorithm-HTMLtoJSON\\GaSchedule.Model\\GaSchedule.Model.csproj": {}
   },
   "projects": {
-    "/home/demetre/Desktop/HTMLtoJSON-ScheduleApp-GeneticAlgorithm/GaSchedule.Model/GaSchedule.Model.csproj": {
+    "C:\\Users\\sabak\\OneDrive\\Documents\\Internship-GeneticAlgorithm\\GeneticAlgorithm-HTMLtoJSON\\GaSchedule.Model\\GaSchedule.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/demetre/Desktop/HTMLtoJSON-ScheduleApp-GeneticAlgorithm/GaSchedule.Model/GaSchedule.Model.csproj",
+        "projectUniqueName": "C:\\Users\\sabak\\OneDrive\\Documents\\Internship-GeneticAlgorithm\\GeneticAlgorithm-HTMLtoJSON\\GaSchedule.Model\\GaSchedule.Model.csproj",
         "projectName": "GaSchedule.Model",
-        "projectPath": "/home/demetre/Desktop/HTMLtoJSON-ScheduleApp-GeneticAlgorithm/GaSchedule.Model/GaSchedule.Model.csproj",
-        "packagesPath": "/home/demetre/.nuget/packages/",
-        "outputPath": "/home/demetre/Desktop/HTMLtoJSON-ScheduleApp-GeneticAlgorithm/GaSchedule.Model/obj/",
+        "projectPath": "C:\\Users\\sabak\\OneDrive\\Documents\\Internship-GeneticAlgorithm\\GeneticAlgorithm-HTMLtoJSON\\GaSchedule.Model\\GaSchedule.Model.csproj",
+        "packagesPath": "C:\\Users\\sabak\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sabak\\OneDrive\\Documents\\Internship-GeneticAlgorithm\\GeneticAlgorithm-HTMLtoJSON\\GaSchedule.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/demetre/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\sabak\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -53,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -32,3 +32,15 @@ C:/Users/sabak/OneDrive/Documents/Internship-GeneticAlgorithm/asp.net/app/GaSche
 /home/demetre/Desktop/HTMLtoJSON-ScheduleApp-GeneticAlgorithm/GaSchedule.Model/obj/Debug/net8.0/refint/GaSchedule.Model.dll
 /home/demetre/Desktop/HTMLtoJSON-ScheduleApp-GeneticAlgorithm/GaSchedule.Model/obj/Debug/net8.0/GaSchedule.Model.pdb
 /home/demetre/Desktop/HTMLtoJSON-ScheduleApp-GeneticAlgorithm/GaSchedule.Model/obj/Debug/net8.0/ref/GaSchedule.Model.dll
+C:\Users\sabak\OneDrive\Documents\Internship-GeneticAlgorithm\GeneticAlgorithm-HTMLtoJSON\GaSchedule.Model\bin\Debug\net8.0\GaSchedule.Model.deps.json
+C:\Users\sabak\OneDrive\Documents\Internship-GeneticAlgorithm\GeneticAlgorithm-HTMLtoJSON\GaSchedule.Model\bin\Debug\net8.0\GaSchedule.Model.dll
+C:\Users\sabak\OneDrive\Documents\Internship-GeneticAlgorithm\GeneticAlgorithm-HTMLtoJSON\GaSchedule.Model\bin\Debug\net8.0\GaSchedule.Model.pdb
+C:\Users\sabak\OneDrive\Documents\Internship-GeneticAlgorithm\GeneticAlgorithm-HTMLtoJSON\GaSchedule.Model\obj\Debug\net8.0\GaSchedule.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sabak\OneDrive\Documents\Internship-GeneticAlgorithm\GeneticAlgorithm-HTMLtoJSON\GaSchedule.Model\obj\Debug\net8.0\GaSchedule.Model.AssemblyInfoInputs.cache
+C:\Users\sabak\OneDrive\Documents\Internship-GeneticAlgorithm\GeneticAlgorithm-HTMLtoJSON\GaSchedule.Model\obj\Debug\net8.0\GaSchedule.Model.AssemblyInfo.cs
+C:\Users\sabak\OneDrive\Documents\Internship-GeneticAlgorithm\GeneticAlgorithm-HTMLtoJSON\GaSchedule.Model\obj\Debug\net8.0\GaSchedule.Model.csproj.CoreCompileInputs.cache
+C:\Users\sabak\OneDrive\Documents\Internship-GeneticAlgorithm\GeneticAlgorithm-HTMLtoJSON\GaSchedule.Model\obj\Debug\net8.0\GaSchedule.Model.sourcelink.json
+C:\Users\sabak\OneDrive\Documents\Internship-GeneticAlgorithm\GeneticAlgorithm-HTMLtoJSON\GaSchedule.Model\obj\Debug\net8.0\GaSchedule.Model.dll
+C:\Users\sabak\OneDrive\Documents\Internship-GeneticAlgorithm\GeneticAlgorithm-HTMLtoJSON\GaSchedule.Model\obj\Debug\net8.0\refint\GaSchedule.Model.dll
+C:\Users\sabak\OneDrive\Documents\Internship-GeneticAlgorithm\GeneticAlgorithm-HTMLtoJSON\GaSchedule.Model\obj\Debug\net8.0\GaSchedule.Model.pdb
+C:\Users\sabak\OneDrive\Documents\Internship-GeneticAlgorithm\GeneticAlgorithm-HTMLtoJSON\GaSchedule.Model\obj\Debug\net8.0\ref\GaSchedule.Model.dll

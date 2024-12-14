@@ -2,53 +2,85 @@
   {
     "prof": {
       "id": 1,
-      "name": "1"
+      "name": "Besik Dundua"
     }
   },
   {
     "prof": {
       "id": 2,
-      "name": "2"
+      "name": "Helmut Seidl"
     }
   },
   {
     "course": {
       "id": 1,
-      "name": "1"
+      "name": "Fundamentals of Programming"
     }
   },
   {
     "course": {
       "id": 2,
-      "name": "2"
+      "name": "Ocaml"
     }
   },
   {
     "room": {
-      "name": "1",
+      "name": "K-CH",
       "lab": false,
-      "size": 11
+      "size": 100
     }
   },
   {
     "room": {
-      "name": "2",
-      "lab": false,
-      "size": 22
+      "name": "K-200",
+      "lab": true,
+      "size": 40
+    }
+  },
+  {
+    "room": {
+      "name": "K-320",
+      "lab": true,
+      "size": 30
     }
   },
   {
     "group": {
       "id": 1,
-      "name": "1",
-      "size": 1
+      "name": "team1",
+      "size": 20
     }
   },
   {
     "group": {
       "id": 2,
-      "name": "2",
-      "size": 2
+      "name": "team2",
+      "size": 30
+    }
+  },
+  {
+    "group": {
+      "id": 3,
+      "name": "team3",
+      "size": 20
+    }
+  },
+  {
+    "group": {
+      "id": 4,
+      "name": "team4",
+      "size": 50
+    }
+  },
+  {
+    "class": {
+      "professor": 2,
+      "course": 2,
+      "groups": [
+        2
+      ],
+      "duration": 3,
+      "lab": true
     }
   },
   {
@@ -58,7 +90,18 @@
       "groups": [
         1
       ],
-      "duration": 1,
+      "duration": 3,
+      "lab": false
+    }
+  },
+  {
+    "class": {
+      "professor": 1,
+      "course": 1,
+      "groups": [
+        3
+      ],
+      "duration": 2,
       "lab": false
     }
   },
@@ -67,7 +110,7 @@
       "professor": 2,
       "course": 2,
       "groups": [
-        2
+        4
       ],
       "duration": 2,
       "lab": false

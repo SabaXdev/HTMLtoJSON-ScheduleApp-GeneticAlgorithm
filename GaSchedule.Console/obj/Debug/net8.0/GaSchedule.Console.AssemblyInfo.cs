@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright © Miller Cy Chan 2022 - 2023")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.2.3.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.2.3+ce16e255ac17f8f3bcf7b252f87c8730f5df92b0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.2.3+da4fdcd3c1486adbb451584822c8ce2c6124a407")]
 [assembly: System.Reflection.AssemblyProductAttribute("GaSchedule.cs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GaSchedule")]
 [assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/mcychan/GASchedule.cs")]
